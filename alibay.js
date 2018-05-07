@@ -68,7 +68,7 @@ function putItemsSold(userID, value) {
     itemsSold[userID] = value;
 }
 
-function getItemSold(userID) {
+function getItemsSold(userID) {
     var ret = itemsSold[userID];
     if(ret == undefined) {
         return null;
