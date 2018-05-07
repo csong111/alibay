@@ -19,10 +19,18 @@ let listings = {
         userID: 222,
         price: 40.99,
         description: "blue sweater from the 1980s",
-        itemName: "vintage 80s sweater"
+        itemName: "vintage 80s sweater",
+        image: "url"
     }
 } // map that keeps track of all the items being sold on the marketplace
 
+let cartItems = {
+    userID:   {
+        itemID: 123,
+        itemID: 145
+    }
+
+}
 /*
 Before implementing the login functionality, use this function to generate a new UID every time.
 */

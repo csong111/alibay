@@ -4,8 +4,8 @@ function test() {
     let sellerID = alibay.genUID();
     let buyerID = alibay.genUID();
 
-    alibay.initializeUserIfNeeded(sellerID)
-    alibay.initializeUserIfNeeded(buyerID)
+    alibay.initializeSeller(sellerID)
+    alibay.initializeBuyer(buyerID)
 
     let listing1ID = alibay.createListing(sellerID, 500000, "A very nice boat")
     let listing2ID = alibay.createListing(sellerID, 1000, "Faux fur gloves")
