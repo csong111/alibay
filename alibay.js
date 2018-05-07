@@ -1,4 +1,3 @@
-//hello
 const assert = require('assert');
 
 let itemsBought = {
