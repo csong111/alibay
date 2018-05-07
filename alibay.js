@@ -31,6 +31,16 @@ let cartItems = {
     }
 
 }
+// map that keeps track of all the users 
+let user = {
+    userID: {
+        email: "email@email.com",
+        firstName: "Mary",
+        lastName: "doe",
+        password: "password"
+    }
+}
+
 /*
 Before implementing the login functionality, use this function to generate a new UID every time.
 */
