@@ -43,6 +43,7 @@ function genUID() {
 function putItemsBought(userID, itemID) {
     itemsBought[userID] = itemID;
     fs.writeFileSync('../itemsBought.json', JSON.stringify(itemsBought))
+    return {success: true}
 }
 
 function getItemsBought(userID) {
@@ -70,6 +71,7 @@ function initializeBuyer(userID) {
 function putItemsSold(userID, itemID) {
     itemsSold[userID] = itemID;
     fs.writeFileSync('../itemsSold.json', JSON.stringify(itemsSold))
+    return {success: true}
 }
 
 function getItemsSold(userID) {
@@ -98,7 +100,8 @@ allItemsBought returns the IDs of all the items bought by a buyer
     returns: an array of listing IDs
 */
 function allItemsBought(buyerID) {
-    return itemsBought[buyerID];    
+    let itemIDs = itemsBought[buyerID];
+    return {success: true, itemIDs};    
 }
 /* 
 createListing adds a new listing to our global state.
@@ -133,7 +136,8 @@ allItemsSold returns the IDs of all the items sold by a seller
     returns: an array of listing IDs
 */
 function allItemsSold(sellerID) {
-    
+    let itemIDs = itemsSold[serllerID];
+    return {success: true, itemIDs}
 }
 
 /*
@@ -142,7 +146,8 @@ Once an item is sold, it will not be returned by allListings
     returns: an array of listing IDs
 */
 function allListings() {
-    
+    let itemIDs = Object.keys(listings);
+    return {success: true, itemIDs}
 }
 
 /*
@@ -153,9 +158,29 @@ Once an item is sold, it will not be returned by searchForListings
 */
 
 function addtoCart (itemID, userID) {
-
+    cartItems[userID] = itemID;
+    let itemIDs = cartItems[userID];
+    return {success: true, itemIDs}
+    fs.writeFileSync('../cartItems.json', JSON.stringify(cartItems));
 }
 
 function removefromCart (itemID, userID) {
+    delete cartItems[userID][itemID];
+    let itemIDs = cartItems[userID];
+    return {success: true, itemIDs}
+    fs.writeFileSync('./carodatabase/cartItems.json', JSON.stringify(cartItems));
+}
 
+function getCart (userID) {
+    let itemIDs = cartItems[userID]
+    return {success: true, itemIDs}
+}
+
+function searchForListings (searchTerm) {
+    let itemIDs = Object.keys(listings).filter((itemID) => { 
+        let item = listings[itemID];
+        if (item.itemName.includes(searchTerm) || item.description.includes(searchTerm)) return true;
+        return false;
+    }) 
+    return itemIDs;
 }
