@@ -41,4 +41,26 @@ app.get('/getItemDetails', (req, res) => {
     res.send(JSON.stringify(alibay.getItemDetails(listingID))); 
 })
 
+app.get('/allListings', (req, res) => {
+    res.send(JSON.stringify(alibay.allListings()))
+})
+
+app.post('/addToCart', (req, res) => {
+    let body = JSON.parse(req.body.toString());
+    let userID = body.userID;
+    let itemID = body.itemID;
+    res.send(JSON.stringify(alibay.addToCart(userID, itemID)))
+})
+
+app.post('/removeFromCart', (req, res) => {
+    let body = JSON.parse(req.body.toString());
+    let userID = body.userID;
+    let itemID = body.itemID;
+})
+
+app.get('/getCart', (res, req) => {
+    let userID = req.query.userID;
+    res.send(JSON.stringify(alibay.getCart(userID)));
+})
+
 app.listen(5000, () => console.log('Listening on port 3000!'))
