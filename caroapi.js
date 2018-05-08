@@ -28,7 +28,7 @@ app.get('/getItemsSold', (req, res) => {
 
 app.post('/createListing', (req, res) => {
     let body = JSON.parse(req.body.toString());
-    let serllerId = body.userID;
+    let sellerID = body.userID;
     let price = body.price;
     let description = body.description;
     let itemName = body.itemName;
@@ -66,6 +66,14 @@ app.get('/getCart', (res, req) => {
 app.get('/searchForListings', (req, res) => {
     let searchTerm = req.query.searchTerm;
     res.send(JSON.stringify(alibay.searchforListings(searchTerm)))
+})
+
+app.post('/buy', (req, res) => {
+    let body = JSON.parse(req.body.toString());
+    let buyerID = body.userID;
+    let sellerID = body.sellerID; 
+    let itemID = body.itemID;
+    res.send(JSON.stringify(alibay.buy(buyerID, sellerID, itemID)))
 })
 
 app.listen(5000, () => console.log('Listening on port 3000!'))

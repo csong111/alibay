@@ -182,5 +182,24 @@ function searchForListings (searchTerm) {
         if (item.itemName.includes(searchTerm) || item.description.includes(searchTerm)) return true;
         return false;
     }) 
-    return itemIDs;
+    return {success: true, itemIDs};
+}
+/* 
+buy changes the global state.
+Another buyer will not be able to purchase that listing
+The listing will no longer appear in search results
+The buyer will see the listing in his history of purchases
+The seller will see the listing in his history of items sold
+    parameters: 
+     [buyerID] The ID of buyer
+     [sellerID] The ID of seller
+     [listingID] The ID of listing
+    returns: undefined
+*/
+function buy (buyerID, sellerID, listingID) {
+    putItemsBought(buyerID, listingID);
+    putItemsSold(sellerID, listingID);
+    delete listings[listingID];
+    return {success: true}
+    fs.writeFileSync('../listings.json', JSON.stringify(listings));
 }
