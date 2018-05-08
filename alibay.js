@@ -8,6 +8,40 @@ const sha1 = require('sha1');
 
 let users = JSON.parse(fs.readFileSync('./database/users.json').toString())
 let sessionInfo = {}
+let itemsBought = JSON.parse(fs.readFileSync('./database/itemsBought.json').toString())
+//{
+    //userID : [
+        //itemID,
+        //itemID,
+        //itemID
+//]
+//} // map that keeps track of all the items a user has bought
+let itemsSold = JSON.parse(fs.readFileSync('./database/itemsSold.json').toString())
+//{
+//     userID : [
+//         itemID,
+//         itemID,
+//         itemID
+//     ]
+// } // map that keeps track of all the items a user has sold
+let listings = JSON.parse(fs.readFileSync('./database/listings.json').toString()) 
+//{
+//     itemID : {
+//         userID: 222,
+//         price: 40.99,
+//         description: "blue sweater from the 1980s",
+//         itemName: "vintage 80s sweater",
+//         image: "url"
+//     }
+// } // map that keeps track of all the items being sold on the marketplace
+
+let cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
+//{
+//     userID:   [
+//         itemID,
+//         itemID
+//     ]
+// }
 
 function genUID() {
     return Math.floor(Math.random() * 100000000)
@@ -71,39 +105,6 @@ function login(email, password) {
             return { success: false }
         }
 }
-let itemsBought = fs.readFileSync('./database/itemsBought.json')
-//{
-    //userID : [
-        //itemID,
-        //itemID,
-        //itemID
-//]
-//} // map that keeps track of all the items a user has bought
-let itemsSold = fs.readFileSync('./database/itemsSold.json')
-//{
-//     userID : [
-//         itemID,
-//         itemID,
-//         itemID
-//     ]
-// } // map that keeps track of all the items a user has sold
-let listings = fs.readFileSync('./database/listings.json') //{
-//     itemID : {
-//         userID: 222,
-//         price: 40.99,
-//         description: "blue sweater from the 1980s",
-//         itemName: "vintage 80s sweater",
-//         image: "url"
-//     }
-// } // map that keeps track of all the items being sold on the marketplace
-
-let cartItems = fs.readFileSync('./database/cartItems.json')
-//{
-//     userID:   [
-//         itemID,
-//         itemID
-//     ]
-// }
 
 function putItemsBought(userID, itemID) {
     itemsBought[userID] = itemID;
