@@ -175,19 +175,19 @@ function searchForListings(searchTerm) {
 }
 
 module.exports = {
-    genUID, // This is just a shorthand. It's the same as genUID: genUID. 
-    putItemsBought,
-    getItemsBought,
-    initializeBuyer,
-    putItemsSold,
-    getItemsSold,
-    initializeSeller,
+    // genUID, // This is just a shorthand. It's the same as genUID: genUID. 
+    // putItemsBought,
+    // getItemsBought,
+    // initializeBuyer,
+    // putItemsSold,
+    // getItemsSold,
+    // initializeSeller,
     //allItemsBought,
-    createListing,
-    getItemDetails,
-    buy,
+    // createListing,
+    // getItemDetails,
+    // buy,
     //allItemsSold,
-    allListings,
-    searchforListings
+    // allListings,
+    // searchforListings
     // Add all the other functions that need to be exported
 }

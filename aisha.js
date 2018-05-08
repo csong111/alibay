@@ -4,52 +4,56 @@ const app = express()
 const bodyParser = require('body-parser')
 const fs = require("fs")
 
-let users = {
-    4145241: {
-        email: "email@email.com",
-        firstName: "Mary",
-        lastName: "doe",
-        password: "password"
-    }
-}
+let users = JSON.parse(fs.readFileSync('./users.json').toString())
+// 4145241: {
+//     email: "email@email.com",
+//     firstName: "Mary",
+//     lastName: "doe",
+//     password: "password"
+// }
 
-let sessionInfo={}
-    
-try {
-    users = JSON.parse(fs.readFileSync('../users.json').toString())
-} catch (err) {
-}
+let sessionInfo = {}
+
+
 function genUID() {
     return Math.floor(Math.random() * 100000000)
 }
 
-function signUp (email, password, firstName, lastName){
-    let userID = genUID
-    while (users[userID]){
-        let userID = genUID
-    }
+function signUp(email, password, firstName, lastName) {
+    let userID = genUID()
+    let currentUsers = [];
 
-    Object.keys(users.forEach((user,ind) =>{
-        if (users[user].email === email){
-            return {success:false}
+    Object.keys(users).forEach((user, ind) => {
+        if (users[user].email === email) {
+            currentUsers.push(users[user])
         }
-    }))
-    users[userID] = {email, password, firstName, lastName}
-    fs.writeFileSync('../users.json', JSON.stringify(users))
-    return {success:true}
-}    
+    })
 
-function login(email, password){
-// go through all the users, find the userID with the email....
+    if (currentUsers.length >= 1) {
+        return { success: false }
+    } else {
+        users[userID] = { email, password, firstName, lastName }
+        fs.writeFileSync('./users.json', JSON.stringify(users))
+        return { success: true }
+    }
+}
 
-
-
-if(users[userID].email===email ){
-    let sessionID = Math.floor(Math.random() * 10000000);
-    sessionInfo[sessionID] = email;
-
-}    
-
+function login(email, password) {
+    let currentUserName=""
+    let currentPassword=""
+    Object.keys(users).forEach((user, ind) => {
+        if (users[user].email === email){
+            currentUserName= users[user].email
+            currentPassword= users[user].password
+        }
+    })
+        if (currentUserName === email && currentPassword === password) {
+            let sessionID = Math.floor(Math.random() * 10000000);
+            sessionInfo[sessionID] = email
+            return { success: true }
+        } else {
+            return { success: false }
+        }
 }
 
 module.exports = {
