@@ -4,6 +4,7 @@
         "price": 40.99,
         "description": "blue sweater from the 1980s",
         "itemName": "vintage 80s sweater",
-        "image": "url"
+        "image": "url",
+        "tags": "vintage, sweater, wool"
     }
 }

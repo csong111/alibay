@@ -177,9 +177,9 @@ This function is incomplete. You need to complete it.
       [blurb] A blurb describing the item
     returns: The ID of the new listing
 */
-function createListing(sellerID, price, description, itemName, image) {
+function createListing(sellerID, price, description, itemName, image, tags) {
     let itemID = Math.floor(Math.random()*100000);
-    listings[itemID] = {sellerID, price, description, itemName, image};    
+    listings[itemID] = {sellerID, price, description, itemName, image, tags};    
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
     return {sucess: true, itemID};
   }
@@ -236,9 +236,12 @@ Once an item is sold, it will not be returned by searchForListings
     returns: an array of listing IDs
 */
 function searchforListings (searchTerm) {
+    let splitTerms = searchTerm.split(' ');
     let itemIDs = Object.keys(listings).filter((itemID) => { 
         let item = listings[itemID];
-        if (item.itemName.includes(searchTerm) || item.description.includes(searchTerm)) return true;
+        if (splitTerms.some(term => item.itemName.includes(term)) || 
+        splitTerms.some(term => item.description.includes(term)) || 
+        splitTerms.some(term => item.tags.includes(term))) return true;
         return false;
     }) 
     return {success: true, itemIDs};
