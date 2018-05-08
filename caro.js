@@ -157,14 +157,14 @@ Once an item is sold, it will not be returned by searchForListings
     returns: an array of listing IDs
 */
 
-function addtoCart (itemID, userID) {
+function addToCart (itemID, userID) {
     cartItems[userID] = itemID;
     let itemIDs = cartItems[userID];
     fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems));
     return {success: true, itemIDs}
 }
 
-function removefromCart (itemID, userID) {
+function removeFromCart (itemID, userID) {
     delete cartItems[userID][itemID];
     let itemIDs = cartItems[userID];
     fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems));
