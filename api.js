@@ -2,6 +2,8 @@ const alibay = require('./alibay');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
+const fs = require('fs')
+
 
 app.use(bodyParser.raw({ type: "*/*", limit: '50mb' }))
 app.use(express.static('images'))
@@ -56,9 +58,9 @@ app.get('/getItemsSold', (req, res) => {
 
 
 app.post('/uploadPic', (req, res) => {
-    var extension = req.query.ext.split('.').pop();
-    var randomString = '' +  Math.floor(Math.random() * 10000000)
-    var randomFilename = randomString + '.' + extension
+    var extension = req.query.ext;
+    var randomString = '' +  Math.floor(Math.random() * 10000000);
+    var randomFilename = randomString + '.' + extension;
     fs.writeFileSync('images/' +  randomFilename, req.body);
     res.send(randomFilename);
 })
