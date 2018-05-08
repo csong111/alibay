@@ -17,7 +17,13 @@ app.post('/login', (req, res) => {
     let body = JSON.parse(req.body.toString());
     let email = body.email
     let password = body.password
-    res.send(JSON.stringify(aisha.login(email, password)));
+    let loginResponse = aisha.login(email,password)
+    if (!loginResponse.success) {
+        res.send(JSON.stringify({success:false}))
+    } else {
+    res.set('Set-Cookie', loginResponse.sessionID)
+    res.send(JSON.stringify({success:true}))
+    }
 });
 
 app.post('/signup', (req, res) => {

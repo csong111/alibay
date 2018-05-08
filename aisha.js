@@ -49,8 +49,8 @@ function login(email, password) {
     })
         if (currentUserName === email && currentPassword === password) {
             let sessionID = Math.floor(Math.random() * 10000000);
-            sessionInfo[sessionID] = email
-            return { success: true }
+         //   sessionInfo[sessionID] = email
+            return { sessionID }
         } else {
             return { success: false }
         }
