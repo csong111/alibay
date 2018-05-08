@@ -175,3 +175,12 @@ function getCart (userID) {
     let itemIDs = cartItems[userID]
     return {success: true, itemIDs}
 }
+
+function searchForListings (searchTerm) {
+    let itemIDs = Object.keys(listings).filter((itemID) => { 
+        let item = listings[itemID];
+        if (item.itemName.includes(searchTerm) || item.description.includes(searchTerm)) return true;
+        return false;
+    }) 
+    return itemIDs;
+}

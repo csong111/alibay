@@ -63,4 +63,9 @@ app.get('/getCart', (res, req) => {
     res.send(JSON.stringify(alibay.getCart(userID)));
 })
 
+app.get('/searchForListings', (req, res) => {
+    let searchTerm = req.query.searchTerm;
+    res.send(JSON.stringify(alibay.searchforListings(searchTerm)))
+})
+
 app.listen(5000, () => console.log('Listening on port 3000!'))
