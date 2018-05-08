@@ -4,18 +4,18 @@ const app = express();
 var fs = require('fs');
 
 let itemsBought = {
-    userID : {
-        itemID : 123,
-        itemID : 123,
-        itemID : 472
-    }
+    userID : [
+        itemID,
+        itemID,
+        itemID
+]
 } // map that keeps track of all the items a user has bought
 let itemsSold = {
-    userID : {
-        itemID : 123,
-        itemID : 123,
-        itemID : 472
-    } 
+    userID : [
+        itemID,
+        itemID,
+        itemID
+    ]
 } // map that keeps track of all the items a user has sold
 let listings = {
     itemID : {
@@ -28,26 +28,26 @@ let listings = {
 } // map that keeps track of all the items being sold on the marketplace
 
 let cartItems = {
-    userID:   {
-        itemID: 123,
-        itemID: 145
-    }
-
+    userID:   [
+        itemID,
+        itemID
+    ]
 }
 function genUID() {
     return Math.floor(Math.random() * 100000000)
 }
 
-function putItemsBought(userID, value) {
-    itemsBought[userID] = value;
+function putItemsBought(userID, itemID) {
+    itemsBought[userID] = itemID;
+    fs.writeFileSync
 }
 
 function getItemsBought(userID) {
-    var ret = itemsBought[userID];
-    if(ret == undefined) {
-        return null;
+    var itemIDs = itemsBought[userID];
+    if(itemIDs == undefined) {
+        return {success: false, itemIDs: undefined};
     }
-    return ret;
+    return {success: true, itemIDs};
 }
 
 /*
@@ -64,8 +64,8 @@ function initializeBuyer(uid) {
 
 /*repeat above process for itemsSold map */
 
-function putItemsSold(userID, value) {
-    itemsSold[userID] = value;
+function putItemsSold(userID, itemID) {
+    itemsSold[userID] = itemID;
 }
 
 function getItemsSold(userID) {
@@ -108,8 +108,7 @@ This function is incomplete. You need to complete it.
 function createListing(sellerID, price, description, itemName, image) {
   let itemID = Math.floor(Math.random()*100000)
   listings[itemID] = {sellerID, price, description, itemName, image}    
-  return {
-      sucess: true, itemID};
+  return {sucess: true, itemID};
 }
 
 /* 
