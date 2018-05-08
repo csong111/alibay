@@ -9,6 +9,10 @@ const sha1 = require('sha1');
 let users = JSON.parse(fs.readFileSync('./database/users.json').toString())
 let sessionInfo = {}
 
+function genUID() {
+    return Math.floor(Math.random() * 100000000)
+}
+
 function signUp(email, pw, firstName, lastName) {
     let userID = genUID()
     let currentUsers = [];
@@ -78,12 +82,6 @@ let cartItems = fs.readFileSync('./database/cartItems.json')
 //         itemID
 //     ]
 // }
-/*
-Before implementing the login functionality, use this function to generate a new UID every time.
-*/
-function genUID() {
-    return Math.floor(Math.random() * 100000000)
-}
 
 function putItemsBought(userID, itemID) {
     itemsBought[userID] = itemID;
