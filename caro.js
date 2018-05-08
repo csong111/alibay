@@ -115,8 +115,8 @@ This function is incomplete. You need to complete it.
 function createListing(sellerID, price, description, itemName, image) {
   let itemID = Math.floor(Math.random()*100000);
   listings[itemID] = {sellerID, price, description, itemName, image};    
+  fs.writeFileSync('../listings.json', JSON.stringify(listings));
   return {sucess: true, itemID};
-  fs.writeFileSync('../listings.json', JSON.stringify(listings))
 }
 
 /* 
@@ -160,15 +160,15 @@ Once an item is sold, it will not be returned by searchForListings
 function addtoCart (itemID, userID) {
     cartItems[userID] = itemID;
     let itemIDs = cartItems[userID];
-    return {success: true, itemIDs}
     fs.writeFileSync('../cartItems.json', JSON.stringify(cartItems));
+    return {success: true, itemIDs}
 }
 
 function removefromCart (itemID, userID) {
     delete cartItems[userID][itemID];
     let itemIDs = cartItems[userID];
-    return {success: true, itemIDs}
     fs.writeFileSync('./carodatabase/cartItems.json', JSON.stringify(cartItems));
+    return {success: true, itemIDs}
 }
 
 function getCart (userID) {
@@ -200,6 +200,6 @@ function buy (buyerID, sellerID, listingID) {
     putItemsBought(buyerID, listingID);
     putItemsSold(sellerID, listingID);
     delete listings[listingID];
-    return {success: true}
     fs.writeFileSync('../listings.json', JSON.stringify(listings));
+    return {success: true}
 }
