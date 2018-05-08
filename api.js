@@ -3,7 +3,8 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-app.use(bodyParser.raw({ type: "*/*" }))
+app.use(bodyParser.raw({ type: "*/*", limit: '50mb' }))
+app.use(express.static('images'))
 
 app.post('/login', (req, res) => {
     let body = JSON.parse(req.body.toString());
@@ -52,6 +53,15 @@ app.get('/getItemsSold', (req, res) => {
     let userID = req.query.userID;
     res.send(JSON.stringify(alibay.getItemsSold(userID)));
 });
+
+
+app.post('/uploadPic', (req, res) => {
+    var extension = req.query.ext.split('.').pop();
+    var randomString = '' +  Math.floor(Math.random() * 10000000)
+    var randomFilename = randomString + '.' + extension
+    fs.writeFileSync('images/' +  randomFilename, req.body);
+    res.send(randomFilename);
+})
 
 app.post('/createListing', (req, res) => {
     let body = JSON.parse(req.body.toString());
