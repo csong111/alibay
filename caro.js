@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 var fs = require('fs');
 
-let itemsBought = fs.readFileSync('../itemsBought.json')
+let itemsBought = fs.readFileSync('./database/itemsBought.json')
 //{
     //userID : [
         //itemID,
@@ -11,7 +11,7 @@ let itemsBought = fs.readFileSync('../itemsBought.json')
         //itemID
 //]
 //} // map that keeps track of all the items a user has bought
-let itemsSold = fs.readFileSync('../itemsSold.json')
+let itemsSold = fs.readFileSync('./database/itemsSold.json')
 //{
 //     userID : [
 //         itemID,
@@ -19,7 +19,7 @@ let itemsSold = fs.readFileSync('../itemsSold.json')
 //         itemID
 //     ]
 // } // map that keeps track of all the items a user has sold
-let listings = fs.readFileSync('../listings.json') //{
+let listings = fs.readFileSync('./database/listings.json') //{
 //     itemID : {
 //         userID: 222,
 //         price: 40.99,
@@ -29,7 +29,7 @@ let listings = fs.readFileSync('../listings.json') //{
 //     }
 // } // map that keeps track of all the items being sold on the marketplace
 
-let cartItems = fs.readFileSync('../cartItems.json')
+let cartItems = fs.readFileSync('./database/cartItems.json')
 //{
 //     userID:   [
 //         itemID,
@@ -42,7 +42,7 @@ function genUID() {
 
 function putItemsBought(userID, itemID) {
     itemsBought[userID] = itemID;
-    fs.writeFileSync('../itemsBought.json', JSON.stringify(itemsBought))
+    fs.writeFileSync('./database/itemsBought.json', JSON.stringify(itemsBought))
     return {success: true}
 }
 
@@ -70,7 +70,7 @@ function initializeBuyer(userID) {
 
 function putItemsSold(userID, itemID) {
     itemsSold[userID] = itemID;
-    fs.writeFileSync('../itemsSold.json', JSON.stringify(itemsSold))
+    fs.writeFileSync('./database/itemsSold.json', JSON.stringify(itemsSold))
     return {success: true}
 }
 
@@ -115,7 +115,7 @@ This function is incomplete. You need to complete it.
 function createListing(sellerID, price, description, itemName, image) {
   let itemID = Math.floor(Math.random()*100000);
   listings[itemID] = {sellerID, price, description, itemName, image};    
-  fs.writeFileSync('../listings.json', JSON.stringify(listings));
+  fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
   return {sucess: true, itemID};
 }
 
@@ -160,14 +160,14 @@ Once an item is sold, it will not be returned by searchForListings
 function addtoCart (itemID, userID) {
     cartItems[userID] = itemID;
     let itemIDs = cartItems[userID];
-    fs.writeFileSync('../cartItems.json', JSON.stringify(cartItems));
+    fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems));
     return {success: true, itemIDs}
 }
 
 function removefromCart (itemID, userID) {
     delete cartItems[userID][itemID];
     let itemIDs = cartItems[userID];
-    fs.writeFileSync('./carodatabase/cartItems.json', JSON.stringify(cartItems));
+    fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems));
     return {success: true, itemIDs}
 }
 
@@ -200,6 +200,6 @@ function buy (buyerID, sellerID, listingID) {
     putItemsBought(buyerID, listingID);
     putItemsSold(sellerID, listingID);
     delete listings[listingID];
-    fs.writeFileSync('../listings.json', JSON.stringify(listings));
+    fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
     return {success: true}
 }
