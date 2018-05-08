@@ -34,6 +34,68 @@ let cartItems = {
     }
 
 }
+function genUID() {
+    return Math.floor(Math.random() * 100000000)
+}
+
+function putItemsBought(userID, value) {
+    itemsBought[userID] = value;
+}
+
+function getItemsBought(userID) {
+    var ret = itemsBought[userID];
+    if(ret == undefined) {
+        return null;
+    }
+    return ret;
+}
+
+/*
+initializeBuyer adds the UID to our database unless it's already there
+parameter: [uid] the UID of the user.
+returns: undefined
+*/
+function initializeBuyer(uid) {
+    var items = getItemsBought[uid];
+    if(items == null) {
+        putItemsBought(uid, []);
+    }
+}
+
+/*repeat above process for itemsSold map */
+
+function putItemsSold(userID, value) {
+    itemsSold[userID] = value;
+}
+
+function getItemsSold(userID) {
+    var ret = itemsSold[userID];
+    if(ret == undefined) {
+        return null;
+    }
+    return ret;
+}
+
+/*
+initializeSeller adds the UID to our database unless it's already there
+parameter: [uid] the UID of the user.
+returns: undefined
+*/
+function initializeSeller(uid) {
+    var items = getItemsSold[uid];
+    if(items == null) {
+        putItemsSold(uid, []);
+    }
+}
+
+/*
+allItemsBought returns the IDs of all the items bought by a buyer
+    parameter: [buyerID] The ID of the buyer
+    returns: an array of listing IDs
+*/
+function allItemsBought(buyerID) {
+    return itemsBought[buyerID];    
+}
 /* 
 createListing adds a new listing to our global state.
 This function is incomplete. You need to complete it.
@@ -44,7 +106,7 @@ This function is incomplete. You need to complete it.
     returns: The ID of the new listing
 */
 function createListing(sellerID, price, description, itemName, image) {
-  let itemID = Math.floor(Math.randomm*100000)
+  let itemID = Math.floor(Math.random()*100000)
   listings[itemID] = {sellerID, price, description, itemName, image}    
   return {
       sucess: true, itemID};
