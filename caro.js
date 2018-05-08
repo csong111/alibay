@@ -3,43 +3,46 @@ const express = require('express');
 const app = express();
 var fs = require('fs');
 
-let itemsBought = {
-    userID : [
-        itemID,
-        itemID,
-        itemID
-]
-} // map that keeps track of all the items a user has bought
-let itemsSold = {
-    userID : [
-        itemID,
-        itemID,
-        itemID
-    ]
-} // map that keeps track of all the items a user has sold
-let listings = {
-    itemID : {
-        userID: 222,
-        price: 40.99,
-        description: "blue sweater from the 1980s",
-        itemName: "vintage 80s sweater",
-        image: "url"
-    }
-} // map that keeps track of all the items being sold on the marketplace
+let itemsBought = fs.readFileSync('../itemsBought.json')
+//{
+    //userID : [
+        //itemID,
+        //itemID,
+        //itemID
+//]
+//} // map that keeps track of all the items a user has bought
+let itemsSold = fs.readFileSync('../itemsSold.json')
+//{
+//     userID : [
+//         itemID,
+//         itemID,
+//         itemID
+//     ]
+// } // map that keeps track of all the items a user has sold
+let listings = fs.readFileSync('../listings.json') //{
+//     itemID : {
+//         userID: 222,
+//         price: 40.99,
+//         description: "blue sweater from the 1980s",
+//         itemName: "vintage 80s sweater",
+//         image: "url"
+//     }
+// } // map that keeps track of all the items being sold on the marketplace
 
-let cartItems = {
-    userID:   [
-        itemID,
-        itemID
-    ]
-}
+let cartItems = fs.readFileSync('../cartItems.json')
+//{
+//     userID:   [
+//         itemID,
+//         itemID
+//     ]
+// }
 function genUID() {
     return Math.floor(Math.random() * 100000000)
 }
 
 function putItemsBought(userID, itemID) {
     itemsBought[userID] = itemID;
-    fs.writeFileSync
+    fs.writeFileSync('../itemsBought.json', JSON.stringify(itemsBought))
 }
 
 function getItemsBought(userID) {
@@ -55,10 +58,10 @@ initializeBuyer adds the UID to our database unless it's already there
 parameter: [uid] the UID of the user.
 returns: undefined
 */
-function initializeBuyer(uid) {
-    var items = getItemsBought[uid];
-    if(items == null) {
-        putItemsBought(uid, []);
+function initializeBuyer(userID) {
+    var itemIDs = getItemsBought[userID];
+    if(itemIDs == null) {
+        putItemsBought(userID, []);
     }
 }
 
@@ -66,14 +69,15 @@ function initializeBuyer(uid) {
 
 function putItemsSold(userID, itemID) {
     itemsSold[userID] = itemID;
+    fs.writeFileSync('../itemsSold.json', JSON.stringify(itemsSold))
 }
 
 function getItemsSold(userID) {
-    var ret = itemsSold[userID];
-    if(ret == undefined) {
-        return null;
+    var itemIDs = itemsSold[userID];
+    if(itemIDs == undefined) {
+        return {success: false, itemIDs: undefined};
     }
-    return ret;
+    return {success: true, itemIDs};
 }
 
 /*
@@ -81,10 +85,10 @@ initializeSeller adds the UID to our database unless it's already there
 parameter: [uid] the UID of the user.
 returns: undefined
 */
-function initializeSeller(uid) {
-    var items = getItemsSold[uid];
-    if(items == null) {
-        putItemsSold(uid, []);
+function initializeSeller(userID) {
+    var itemIDs = getItemsSold[userID];
+    if(itemIDs == null) {
+        putItemsSold(userID, []);
     }
 }
 
@@ -106,9 +110,10 @@ This function is incomplete. You need to complete it.
     returns: The ID of the new listing
 */
 function createListing(sellerID, price, description, itemName, image) {
-  let itemID = Math.floor(Math.random()*100000)
-  listings[itemID] = {sellerID, price, description, itemName, image}    
+  let itemID = Math.floor(Math.random()*100000);
+  listings[itemID] = {sellerID, price, description, itemName, image};    
   return {sucess: true, itemID};
+  fs.writeFileSync('../listings.json', JSON.stringify(listings))
 }
 
 /* 
@@ -117,7 +122,8 @@ getItemDetails returns the description of a listing
     returns: An object containing the price, blurb and image properties.
 */
 function getItemDetails(listingID) {
-    
+    let details = listings[listingID];
+    return {success: true, details};
 }
 
 
