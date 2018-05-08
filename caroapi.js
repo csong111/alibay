@@ -28,11 +28,17 @@ app.get('/getItemsSold', (req, res) => {
 
 app.post('/createListing', (req, res) => {
     let body = JSON.parse(req.body.toString());
-    let serllerId = body.sellerID;
+    let serllerId = body.userID;
     let price = body.price;
     let description = body.description;
+    let itemName = body.itemName;
     let image = body.image;
     res.send(JSON.stringify(alibay.createListing(sellerID, price, description, itemName, image)));
 });
+
+app.get('/getItemDetails', (req, res) => {
+    let listingID = req.query.itemID;
+    res.send(JSON.stringify(alibay.getItemDetails(listingID))); 
+})
 
 app.listen(5000, () => console.log('Listening on port 3000!'))
