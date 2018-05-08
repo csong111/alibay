@@ -1,4 +1,7 @@
 const assert = require('assert');
+const express = require('express');
+const app = express();
+var fs = require('fs');
 
 let itemsBought = {
     userID : {
@@ -40,8 +43,11 @@ This function is incomplete. You need to complete it.
       [blurb] A blurb describing the item
     returns: The ID of the new listing
 */
-function createListing(sellerID, price, blurb, image) {
-    
+function createListing(sellerID, price, description, itemName, image) {
+  let itemID = Math.floor(Math.randomm*100000)
+  listings[itemID] = {sellerID, price, description, itemName, image}    
+  return {
+      sucess: true, itemID};
 }
 
 /* 
@@ -84,5 +90,5 @@ function addtoCart (itemID, userID) {
 }
 
 function removefromCart (itemID, userID) {
-    
+
 }
