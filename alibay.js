@@ -13,6 +13,18 @@ function genUID() {
     return Math.floor(Math.random() * 100000000)
 }
 
+/* 
+signUp creates a new user account.
+    parameters: 
+      [email] The email of the user
+      [pw] The password of the user
+      [firstName] The users first name
+      [lastName] The users last name
+    Creates a userID for the user.
+    returns: {success : true} if the account was succesfull created, 
+    returns: {success : false} if the account was not created
+*/
+
 function signUp(email, pw, firstName, lastName) {
     let userID = genUID()
     let currentUsers = [];
@@ -32,6 +44,16 @@ function signUp(email, pw, firstName, lastName) {
         return { success: true }
     }
 }
+
+/* 
+login signs a user into their account. 
+    parameters: 
+      [email] The email of the user
+      [pw] The password of the user
+    returns: {success : true, sessionID}  if the sha1(password) provided by the user matches 
+    the password in the users database, a sessionID is created and passed back.
+    returns: {success : false} if the password provided is incorct
+*/
 
 function login(email, password) {
     let currentUserName=""
