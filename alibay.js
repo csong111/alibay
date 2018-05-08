@@ -69,7 +69,6 @@ function signUp(email, pw, firstName, lastName) {
             currentUsers.push(users[user])
         }
     })
-
     if (currentUsers.length >= 1) {
         return { success: false }
     } else {
@@ -236,7 +235,7 @@ Once an item is sold, it will not be returned by searchForListings
     parameter: [searchTerm] The search string matching listing descriptions
     returns: an array of listing IDs
 */
-function searchForListings (searchTerm) {
+function searchforListings (searchTerm) {
     let itemIDs = Object.keys(listings).filter((itemID) => { 
         let item = listings[itemID];
         if (item.itemName.includes(searchTerm) || item.description.includes(searchTerm)) return true;
