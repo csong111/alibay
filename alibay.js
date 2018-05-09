@@ -181,9 +181,10 @@ This function is incomplete. You need to complete it.
       [blurb] A blurb describing the item
     returns: The ID of the new listing
 */
-function createListing(sellerID, price, description, itemName, image, tags) {
+function createListing(sellerID, price, description, itemName, image, tags, stock) {
     let itemID = Math.floor(Math.random()*100000);
-    listings[itemID] = {sellerID, price, description, itemName, image, tags};    
+    let stock =  true; 
+    listings[itemID] = {sellerID, price, description, itemName, image, tags, stock};   
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
     return {sucess: true, itemID};
   }
@@ -211,9 +212,10 @@ The seller will see the listing in his history of items sold
 function buy (buyerID, sellerID, listingID) {
     putItemsBought(buyerID, listingID);
     putItemsSold(sellerID, listingID);
-    delete listings[listingID];
+    let items = listings[listingID];
+    items.stock = false;
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
-    return {success: true}
+    return {success: true, items}
 }
 /* 
 allItemsSold returns the IDs of all the items sold by a seller
