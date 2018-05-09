@@ -240,7 +240,7 @@ Once an item is sold, it will not be returned by searchForListings
     returns: an array of listing IDs
 */
 function searchforListings (searchTerm) {
-    let splitTerms = searchTerm.split(' ');
+    let splitTerms = searchTerm.split(', ');
     let itemIDs = Object.keys(listings).filter((itemID) => { 
         let item = listings[itemID];
         if (splitTerms.some(term => item.itemName.includes(term)) || 
