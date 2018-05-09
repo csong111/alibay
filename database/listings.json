@@ -1,11 +1,4 @@
 {
-  "5811": {
-    "price": "111",
-    "description": "111",
-    "itemName": "Item111",
-    "tags": "111",
-    "stock": true
-  },
   "9883": {
     "price": "7",
     "description": "great ",
@@ -63,13 +56,7 @@
     "tags": "unique, blue, affordable",
     "stock": true
   },
-  "34559": {
-    "price": "efadfad",
-    "description": "dfasda",
-    "itemName": "afasfa",
-    "tags": "DFEASDAAFS",
-    "stock": true
-  },
+
   "80615": {
     "price": "40",
     "description": "great item barely used",

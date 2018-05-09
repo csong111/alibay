@@ -188,7 +188,7 @@ function createListing(sellerID, price, description, itemName, image, tags, stoc
     listings[itemID] = {sellerID, price, description, itemName, image, tags, stock};   
     console.log(sellerID)
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
-    return {sucess: true, itemID};
+    return {success: true, itemID};
   }
 /* 
 getItemDetails returns the description of a listing
@@ -225,7 +225,7 @@ allItemsSold returns the IDs of all the items sold by a seller
     returns: an array of listing IDs
 */
 function allItemsSold(sellerID) {
-    let itemIDs = itemsSold[serllerID];
+    let itemIDs = itemsSold[sellerID];
     return {success: true, itemIDs}
 }
 /*
@@ -234,8 +234,8 @@ Once an item is sold, it will not be returned by allListings
     returns: an array of listing IDs
 */
 function allListings() {
-    let itemIDs = Object.keys(listings);
-    return {success: true, itemIDs}
+    //let itemIDs = Object.keys(listings);
+    return {success: true, listings}
 }
 /*
 searchForListings returns the IDs of all the listings currently on the market
