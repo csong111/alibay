@@ -1,11 +1,88 @@
 {
-    "itemID" : {
-        "userID": 222,
-        "price": 40.99,
-        "description": "blue sweater from the 1980s",
-        "itemName": "vintage 80s sweater",
-        "image": "url",
-        "tags": "vintage, sweater, wool",
-        "stock": true 
-    }
+  "5811": {
+    "price": "111",
+    "description": "111",
+    "itemName": "Item111",
+    "tags": "111",
+    "stock": true
+  },
+  "9883": {
+    "price": "7",
+    "description": "great ",
+    "itemName": "Item8",
+    "image": "7523347.jpg",
+    "tags": "blue, sweater, bye",
+    "stock": true
+  },
+  "10136": {
+    "price": "15",
+    "description": "mint condition, used for 5 months",
+    "itemName": "Item2",
+    "image": "5181708.JPG",
+    "tags": "vintage, blue, cheap",
+    "stock": true
+  },
+  "24758": {
+    "price": "60",
+    "description": "great item, please buy",
+    "itemName": "Item4",
+    "image": "8771051.png",
+    "tags": "vintage, blue, unique",
+    "stock": true
+  },
+  "25412": {
+    "price": "15",
+    "description": "great item",
+    "itemName": "Item2",
+    "image": "7782971.JPG",
+    "tags": "blue, vintage, wool",
+    "stock": true
+  },
+  "29223": {
+    "price": "60",
+    "description": "mint condition, barely used. unique find",
+    "itemName": "Item3",
+    "image": "2265454.jpg",
+    "tags": "unique, vintage, blue",
+    "stock": true
+  },
+  "33488": {
+    "price": "60",
+    "description": "unique thrifted item",
+    "itemName": "Item3",
+    "image": "5776132.jpg",
+    "tags": "unique, blue, affordable",
+    "stock": true
+  },
+  "34559": {
+    "price": "efadfad",
+    "description": "dfasda",
+    "itemName": "afasfa",
+    "tags": "DFEASDAAFS",
+    "stock": true
+  },
+  "80615": {
+    "price": "40",
+    "description": "great item barely used",
+    "itemName": "Item2",
+    "image": "3564339.JPG",
+    "tags": "vintage, cheap, great",
+    "stock": true
+  },
+  "87162": {
+    "price": "12",
+    "description": "this is a great item that has not been used",
+    "itemName": "Item1",
+    "image": "1886131.jpg",
+    "tags": "new, small, vintage",
+    "stock": true
+  },
+  "89777": {
+    "price": "17",
+    "description": "great item, used for 6  months only",
+    "itemName": "Item2",
+    "image": "6409161.JPG",
+    "tags": "vintage, blue, wool",
+    "stock": true
+  }
 }

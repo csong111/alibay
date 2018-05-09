@@ -76,7 +76,8 @@ app.post('/createListing', (req, res) => {
     let itemName = body.itemName;
     let image = body.image;
     let tags = body.tags;
-    res.send(JSON.stringify(alibay.createListing(sellerID, price, description, itemName, image, tags)));
+    let stock = true;
+    res.send(JSON.stringify(alibay.createListing(sellerID, price, description, itemName, image, tags, stock)));
 });
 
 app.get('/getItemDetails', (req, res) => {
