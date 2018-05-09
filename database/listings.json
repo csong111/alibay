@@ -5,6 +5,7 @@
         "description": "blue sweater from the 1980s",
         "itemName": "vintage 80s sweater",
         "image": "url",
-        "tags": "vintage, sweater, wool"
+        "tags": "vintage, sweater, wool",
+        "stock": true 
     }
 }
