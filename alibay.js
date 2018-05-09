@@ -90,7 +90,8 @@ login signs a user into their account.
 function login(email, password) {
     let currentUserName=""
     let currentPassword=""
-    let userName=""
+    let firstName=""
+    let sessionID=""
     let userID=""
 
     Object.keys(users).forEach((user, ind) => {
@@ -102,12 +103,13 @@ function login(email, password) {
         }
     })
         if (currentUserName === email && currentPassword === sha1(password)) {
-            let sessionID = Math.floor(Math.random() * 10000000);
+            sessionID = Math.floor(Math.random() * 10000000);
             return { success: true, sessionID, firstName, userID }
         } else {
             return { success: false }
         }
 }
+
 
 function putItemsBought(userID, itemID) {
     itemsBought[userID] = itemID;
