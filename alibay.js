@@ -185,8 +185,8 @@ This function is incomplete. You need to complete it.
 */
 function createListing(sellerID, price, description, itemName, image, tags, stock) {
     let itemID = Math.floor(Math.random()*100000);
-    console.log(itemID)
     listings[itemID] = {sellerID, price, description, itemName, image, tags, stock};   
+    console.log(sellerID)
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
     return {sucess: true, itemID};
   }
