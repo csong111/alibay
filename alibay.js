@@ -87,19 +87,23 @@ login signs a user into their account.
     the password in the users database, a sessionID is created and passed back.
     returns: {success : false} if the password provided is incorct
 */
-
 function login(email, password) {
     let currentUserName=""
     let currentPassword=""
+    let userName=""
+    let userID=""
+
     Object.keys(users).forEach((user, ind) => {
         if (users[user].email === email){
             currentUserName= users[user].email
             currentPassword= users[user].password
+            firstName = users[user].firstName
+            userID = user
         }
     })
         if (currentUserName === email && currentPassword === sha1(password)) {
             let sessionID = Math.floor(Math.random() * 10000000);
-            return { success: true, sessionID, firstName }
+            return { success: true, sessionID, firstName, userID }
         } else {
             return { success: false }
         }
