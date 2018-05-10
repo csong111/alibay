@@ -42,11 +42,12 @@ function signUp(email, pw, firstName, lastName) {
         }
     })
     if (currentUsers.length >= 1) {
-        return { success: false }
+        return { success: false, userID }
     } else {
         users[userID] = { email, password, firstName, lastName }
         fs.writeFileSync('./database/users.json', JSON.stringify(users))
-        return { success: true }
+        initializeUser(userID)
+        return { success: true, userID }
     }
 }
 
@@ -102,10 +103,18 @@ initializeBuyer adds the UID to our database unless it's already there
 parameter: [uid] the UID of the user.
 returns: undefined
 */
-function initializeBuyer(userID) {
-    var itemIDs = getItemsBought[userID];
-    if(itemIDs == null) {
-        putItemsBought(userID, []);
+function initializeUser(userID) {
+    if(!itemsBought[userID]) {
+        itemsBought[userID] = [];
+        fs.writeFileSync('./database/itemsBought.json', JSON.stringify(itemsBought))
+    }
+    if(!itemsSold[userID]) {
+        itemsSold[userID] = [];
+        fs.writeFileSync('./database/itemsSold.json', JSON.stringify(itemsSold))
+    }
+    if(!cartItems[userID]) {
+        cartItems[userID] = [];
+        fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems))
     }
 }
 
@@ -247,6 +256,7 @@ function removeFromCart (itemID, userID) {
 function getCart (userID) {
     //cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
     //console.log(cartItems[userID])
+    console.log(userID, cartItems)
     let itemIDs = cartItems[userID]
     return {success: true, itemIDs}
 }
@@ -258,10 +268,9 @@ module.exports = {
     genUID, // This is just a shorthand. It's the same as genUID: genUID. 
     putItemsBought,
     getItemsBought,
-    initializeBuyer,
+    initializeUser,
     putItemsSold,
     getItemsSold,
-    initializeSeller,
     allItemsBought,
     createListing,
     getItemDetails,
