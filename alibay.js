@@ -158,7 +158,7 @@ This function is incomplete. You need to complete it.
 function createListing(sellerID, price, description, itemName, image, tags, category, stock) {
     let itemID = Math.floor(Math.random()*100000);
     listings[itemID] = {sellerID, price, description, itemName, image, tags, category, stock};   
-    console.log(sellerID)
+    //console.log(sellerID)
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
     return {success: true, itemID};
   }
@@ -169,7 +169,7 @@ getItemDetails returns the description of a listing
 */
 function getItemDetails(listingID) {
     let details = listings[listingID];
-    console.log(listingID)
+    //console.log(listingID)
     return {success: true, details};
 }
 /* 
