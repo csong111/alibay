@@ -229,8 +229,8 @@ function searchforListings (searchTerm) {
 }
 
 function addToCart (userID, itemID) {
-    cartItems[userID] = itemID;
-    console.log(itemID)
+    cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
+    if(cartItems[userID]){cartItems[userID].push(itemID);}else{cartItems[userID] = [itemID]}
     let itemIDs = cartItems[userID];
     fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems));
     return {success: true, itemIDs}
