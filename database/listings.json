@@ -56,7 +56,22 @@
     "tags": "unique, blue, affordable",
     "stock": true
   },
-
+  "50898": {
+    "price": "30",
+    "description": "amazing item you should buy",
+    "itemName": "great item",
+    "image": "9397161.jpg",
+    "tags": "green, vintage, wool",
+    "stock": true
+  },
+  "79006": {
+    "price": "5",
+    "description": "this item is amazing",
+    "itemName": "Great item",
+    "image": "2620478.png",
+    "tags": "vintage, green, whatever",
+    "stock": true
+  },
   "80615": {
     "price": "40",
     "description": "great item barely used",

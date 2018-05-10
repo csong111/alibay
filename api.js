@@ -6,7 +6,8 @@ const fs = require('fs')
 
 
 app.use(bodyParser.raw({ type: "*/*", limit: '50mb' }))
-app.use(express.static('images'))
+
+    app.use(express.static('images'))
 
 app.post('/login', (req, res) => {
     let body = JSON.parse(req.body.toString());
