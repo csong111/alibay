@@ -9,39 +9,12 @@ const sha1 = require('sha1');
 let users = JSON.parse(fs.readFileSync('./database/users.json').toString())
 let sessionInfo = {}
 let itemsBought = JSON.parse(fs.readFileSync('./database/itemsBought.json').toString())
-//{
-    //userID : [
-        //itemID,
-        //itemID,
-        //itemID
-//]
-//} // map that keeps track of all the items a user has bought
+
 let itemsSold = JSON.parse(fs.readFileSync('./database/itemsSold.json').toString())
-//{
-//     userID : [
-//         itemID,
-//         itemID,
-//         itemID
-//     ]
-// } // map that keeps track of all the items a user has sold
+
 let listings = JSON.parse(fs.readFileSync('./database/listings.json').toString()) 
-//{
-//     itemID : {
-//         userID: 222,
-//         price: 40.99,
-//         description: "blue sweater from the 1980s",
-//         itemName: "vintage 80s sweater",
-//         image: "url"
-//     }
-// } // map that keeps track of all the items being sold on the marketplace
 
 let cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
-//{
-//     userID:   [
-//         itemID,
-//         itemID
-//     ]
-// }
 
 function genUID() {
     return Math.floor(Math.random() * 100000000)
@@ -182,9 +155,9 @@ This function is incomplete. You need to complete it.
       [blurb] A blurb describing the item
     returns: The ID of the new listing
 */
-function createListing(sellerID, price, description, itemName, image, tags, stock) {
+function createListing(sellerID, price, description, itemName, image, tags, category, stock) {
     let itemID = Math.floor(Math.random()*100000);
-    listings[itemID] = {sellerID, price, description, itemName, image, tags, stock};   
+    listings[itemID] = {sellerID, price, description, itemName, image, tags, category, stock};   
     console.log(sellerID)
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
     return {success: true, itemID};
