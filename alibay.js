@@ -244,6 +244,8 @@ function removeFromCart (itemID, userID) {
 }
 
 function getCart (userID) {
+    cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
+    console.log(cartItems[userID])
     let itemIDs = cartItems[userID]
     return {success: true, itemIDs}
 }

@@ -109,7 +109,8 @@ app.post('/removeFromCart', (req, res) => {
     let itemID = body.itemID;
 })
 
-app.get('/getCart', (res, req) => {
+app.get('/getCart', (req, res) => {
+    console.log(req.query)
     let userID = req.query.userID;
     res.send(JSON.stringify(alibay.getCart(userID)));
 })
