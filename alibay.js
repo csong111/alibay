@@ -91,8 +91,9 @@ function putItemsBought(userID, itemID) {
 
 function getItemsBought(userID) {
     var itemIDs = itemsBought[userID];
+    console.log(itemIDs)
     if(itemIDs == undefined) {
-        return {success: false, itemIDs: undefined};
+        return {success: false, itemIDs: []};
     }
     return {success: true, itemIDs};
 }
