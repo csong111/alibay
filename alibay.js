@@ -103,7 +103,7 @@ function login(email, password) {
     })
         if (currentUserName === email && currentPassword === sha1(password)) {
             sessionID = Math.floor(Math.random() * 10000000);
-            return { success: true, sessionID, firstName, userID }
+            return { success: true, sessionID, firstName, userID, email }
         } else {
             return { success: false }
         }

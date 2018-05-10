@@ -22,7 +22,8 @@ app.post('/login', (req, res) => {
     let sessionID = loginResponse.sessionID
     let firstName = loginResponse.firstName
     let userID = loginResponse.userID
-    res.send(JSON.stringify({success: true, sessionID, firstName, userID}))
+    let email = loginResponse.email
+    res.send(JSON.stringify({success: true, sessionID, firstName, userID, email}))
     console.log("success!")
     }
 });
