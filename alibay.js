@@ -197,6 +197,7 @@ getItemDetails returns the description of a listing
 */
 function getItemDetails(listingID) {
     let details = listings[listingID];
+    console.log(listingID)
     return {success: true, details};
 }
 /* 
