@@ -63,7 +63,6 @@ function signUp(email, pw, firstName, lastName) {
     let userID = genUID()
     let currentUsers = [];
     let password = sha1(pw)
-
     Object.keys(users).forEach((user, ind) => {
         if (users[user].email === email) {
             currentUsers.push(users[user])

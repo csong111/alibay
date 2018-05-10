@@ -6,7 +6,8 @@ const fs = require('fs')
 
 
 app.use(bodyParser.raw({ type: "*/*", limit: '50mb' }))
-app.use(express.static('images'))
+
+    app.use(express.static('images'))
 
 app.post('/login', (req, res) => {
     let body = JSON.parse(req.body.toString());
@@ -28,11 +29,15 @@ app.post('/login', (req, res) => {
 
 app.post('/signup', (req, res) => {
     let body = JSON.parse(req.body.toString());
-    let email = body.email
-    let password = body.password
-    let firstName = body.firstName
-    let lastName = body.lastName
-    res.send(JSON.stringify(alibay.signUp(email, password, firstName, lastName)));
+    if( body.email && body.password && body.firstName && body.lastName){
+        let email = body.email
+        let password = body.password
+        let firstName = body.firstName
+        let lastName = body.lastName
+        res.send(JSON.stringify(alibay.signUp(email, password, firstName, lastName)));    
+    }else{
+        res.send(JSON.stringify({ success: false }))
+    }
 });
 
 app.post('/putItemsBought', (req, res) => {
