@@ -228,8 +228,9 @@ function searchforListings (searchTerm) {
     return {success: true, itemIDs};
 }
 
-function addToCart (itemID, userID) {
+function addToCart (userID, itemID) {
     cartItems[userID] = itemID;
+    console.log(itemID)
     let itemIDs = cartItems[userID];
     fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems));
     return {success: true, itemIDs}
