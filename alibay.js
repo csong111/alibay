@@ -92,11 +92,14 @@ function putItemsBought(userID, itemID) {
 
 function getItemsBought(userID) {
     var itemIDs = itemsBought[userID];
+    console.log(itemIDs)
     if(itemIDs == undefined) {
-        return {success: false, itemIDs: undefined};
+        return {success: false, itemIDs: []};
     }
     return {success: true, itemIDs};
 }
+
+
 
 /*
 initializeBuyer adds the UID to our database unless it's already there
@@ -237,6 +240,8 @@ function searchforListings (searchTerm) {
     return {success: true, itemIDs};
 }
 
+
+
 function addToCart (userID, itemID) {
     //cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
     if(cartItems[userID]){cartItems[userID].push(itemID);}
@@ -265,6 +270,15 @@ function getCart (userID) {
 }
 
 
+
+function getItemsFromCategory (category) {
+    let itemIDs = Object.keys(listings).filter((itemID) =>{
+    if (listings[itemID].category === category) return true;
+    return false
+})
+return {success: true, itemIDs}
+}
+
 module.exports = {
     signUp,
     login,
@@ -283,6 +297,7 @@ module.exports = {
     searchforListings,
     addToCart,
     removeFromCart,
-    getCart
+    getCart,
+    getItemsFromCategory
     // Add all the other functions that need to be exported
 }

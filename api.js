@@ -129,4 +129,10 @@ app.post('/buy', (req, res) => {
     res.send(JSON.stringify(alibay.buy(buyerID, sellerID, itemID)))
 })
 
+app.get('/getItemsFromCategory', (req, res) =>{
+    let category = req.query.category
+    console.log(category)
+    res.send(JSON.stringify(alibay.getItemsFromCategory(category)))
+})
+
 app.listen(4000, () => console.log('Listening on port 4000!'))
