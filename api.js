@@ -134,4 +134,11 @@ app.get('/getUserItems', (req, res) =>{
     res.send(JSON.stringify(alibay.getUserItems(userID)))
 })
 
+app.post('/deleteListing', (req, res) => {
+    let body = JSON.parse(req.body.toString());
+    let itemID = body.itemID;
+    let userID = body.userID
+    res.send(JSON.stringify(alibay.deleteListing(itemID, userID)))
+})
+
 app.listen(4000, () => console.log('Listening on port 4000!'))
