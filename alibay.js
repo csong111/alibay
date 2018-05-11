@@ -77,7 +77,7 @@ function login(email, password) {
     })
         if (currentUserName === email && currentPassword === sha1(password)) {
             sessionID = Math.floor(Math.random() * 10000000);
-            return { success: true, sessionID, firstName, userID, email }
+            return { success: true, sessionID, firstName, userID, email}
         } else {
             return { success: false }
         }
@@ -270,29 +270,33 @@ function removeFromCart (itemID, userID) {
 }
 
 
-function getUserItems(userID){
-    let itemIDs= Object.keys(listings).filter((listing) => {
-        if (listings[listing].sellerID === userID) return true 
-        return false
-    })   
-    if (itemIDs== undefined){
-        return {success:false, items:undefined}
-    }   
-    return {success: true, itemIDs} 
+function deleteListing (itemID, userID) {
+    // Filter listingDB to take out item id
+    console.log("ITEM ID",itemID)
+    //listingsDB = JSON.parse(fs.readFileSync('./database/listings.json').toString())
+    delete listings[itemID]
+    fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
+
+    let answer = getUserItems(userID).itemIDs
+    return {success: true, itemIDs : answer , userID}
 }
 
-function deleteListing (itemID, userID) {
-    listings = JSON.parse(fs.readFileSync('./database/listings.json').toString())
-    let itemIDs = Object.keys(listings).filter(listing => {
-       if (listings[listing].sellerID === userID && listing !=itemID) return true;
-       return false
-})
-    fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
-    return {success: true,itemIDs, userID}
-}
+// function deleteListing (itemID, userID) {
+//     listings = JSON.parse(fs.readFileSync('./database/listings.json').toString())
+//     listings = Object.keys(listings).filter(listing => listing !== itemID)
+//     let itemIDs = Object.keys(listings).filter(listing => {
+//        if (listings[listing].sellerID === userID) return true;
+//        return false
+// })
+//     console.log(itemIDs)
+//     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
+//     return {success: true,itemIDs, userID}
+// }
+
 
 function getCart (userID) {
     let itemIDs = cartItems[userID]
+    console.log(itemIDs)
     return {success: true, itemIDs}
 }
 
