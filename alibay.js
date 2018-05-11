@@ -269,17 +269,6 @@ function removeFromCart (itemID, userID) {
 }
 
 
-function getUserItems(userID){
-    let itemIDs= Object.keys(listings).filter((listing) => {
-        if (listings[listing].sellerID === userID) return true 
-        return false
-    })   
-    if (itemIDs== undefined){
-        return {success:false, items:undefined}
-    }   
-    return {success: true, itemIDs} 
-}
-
 function deleteListing (itemID, userID) {
     listings = JSON.parse(fs.readFileSync('./database/listings.json').toString())
     let itemIDs = Object.keys(listings).filter(listing => {
