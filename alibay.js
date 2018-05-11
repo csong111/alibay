@@ -92,7 +92,6 @@ function putItemsBought(userID, itemID) {
 
 function getItemsBought(userID) {
     var itemIDs = itemsBought[userID];
-    console.log(itemIDs)
     if(itemIDs == undefined) {
         return {success: false, itemIDs: []};
     }
@@ -137,6 +136,17 @@ function getItemsSold(userID) {
     }
     return {success: true, itemIDs};
 }
+
+function getUserItems(userID){
+    let itemIDs= Object.keys(listings).filter((listing) => {
+        if (listings[listing].sellerID === userID) return true 
+        return false
+    })   
+    if (itemIDs== undefined){
+        return {success:false, items:undefined}
+    }   
+    return {success: true, itemIDs} 
+}
 /*
 initializeSeller adds the UID to our database unless it's already there
 parameter: [uid] the UID of the user.
@@ -170,7 +180,6 @@ This function is incomplete. You need to complete it.
 function createListing(sellerID, price, description, itemName, image, tags, category, stock) {
     let itemID = Math.floor(Math.random()*100000);
     listings[itemID] = {sellerID, price, description, itemName, image, tags, category, stock};   
-    //console.log(sellerID)
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
     return {success: true, itemID};
   }
@@ -181,7 +190,6 @@ getItemDetails returns the description of a listing
 */
 function getItemDetails(listingID) {
     let details = listings[listingID];
-    //console.log(listingID)
     return {success: true, details};
 }
 /* 
@@ -253,8 +261,7 @@ function addToCart (userID, itemID) {
 
 function removeFromCart (itemID, userID) {
     cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
-    console.log("itemID",itemID)
-    console.log("userID",userID)
+
     cartItems[userID] = cartItems[userID].filter(id => id !== itemID);
     let itemIDs = cartItems[userID];
     fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems));
@@ -271,13 +278,7 @@ function getCart (userID) {
 
 
 
-function getItemsFromCategory (category) {
-    let itemIDs = Object.keys(listings).filter((itemID) =>{
-    if (listings[itemID].category === category) return true;
-    return false
-})
-return {success: true, itemIDs}
-}
+
 
 module.exports = {
     signUp,
@@ -298,6 +299,6 @@ module.exports = {
     addToCart,
     removeFromCart,
     getCart,
-    getItemsFromCategory
+    getUserItems
     // Add all the other functions that need to be exported
 }

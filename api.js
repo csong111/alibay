@@ -111,7 +111,7 @@ app.post('/removeFromCart', (req, res) => {
 })
 
 app.get('/getCart', (req, res) => {
-    console.log(req.query)
+   // console.log(req.query)
     let userID = req.query.userID;
     res.send(JSON.stringify(alibay.getCart(userID)));
 })
@@ -129,10 +129,9 @@ app.post('/buy', (req, res) => {
     res.send(JSON.stringify(alibay.buy(buyerID, sellerID, itemID)))
 })
 
-app.get('/getItemsFromCategory', (req, res) =>{
-    let category = req.query.category
-    console.log(category)
-    res.send(JSON.stringify(alibay.getItemsFromCategory(category)))
+app.get('/getUserItems', (req, res) =>{
+    let userID = req.query.userID
+    res.send(JSON.stringify(alibay.getUserItems(userID)))
 })
 
 app.listen(4000, () => console.log('Listening on port 4000!'))
