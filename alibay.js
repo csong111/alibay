@@ -295,9 +295,6 @@ function deleteListing (itemID, userID) {
 
 
 function getCart (userID) {
-    //cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
-    //console.log(cartItems[userID])
-    //console.log(userID, cartItems)
     let itemIDs = cartItems[userID]
     console.log(itemIDs)
     return {success: true, itemIDs}

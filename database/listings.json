@@ -1,1 +1,186 @@
-{"6705":{"sellerID":"68225185","price":"80","description":"Hip plant stand","itemName":"Plant Stand","image":"2019349.jpg","tags":"plant, green, home","category":"Home and Garden","stock":true},"15904":{"sellerID":"11751377","price":"25","description":"Please don't eat me! Or do? Try putting this little angel on your kitchen or bathroom walls! ","itemName":"Sushi babe print","image":"4194505.jpg","tags":"print, decoration, sushi","category":"Home and Garden","stock":true},"16191":{"sellerID":"11751377","price":"45","description":"Duo of boho cushions with cute tassles and pom poms. Adds personality to any boring couch you might have~","itemName":"Boho cushion duo","image":"9575990.jpg","tags":"cushion, boho, tassles","category":"Home and Garden","stock":true},"16968":{"sellerID":"11751377","price":"25","description":"Blue over you~ You wish. This belongs in your bedroom. Get it!","itemName":"Ultra violet babe print","image":"1902603.jpg","tags":"print, blue, decoration","category":"Home and Garden","stock":true},"23118":{"sellerID":"11751377","price":"50","description":"Splish, splash, splosh! Get ready to make waves in these shorts. Take 'em to the beach, to the pool party, or anywhere.","itemName":"Unisex summer shorts","image":"8434958.jpg","tags":"shorts, swimwear, unisex","category":"Fashion","stock":true},"44216":{"sellerID":"11751377","price":"15","description":"Show your love with this open heart vase. Molded from a patented plastic composite, this heart is unbreakable~ Looks great with any flowers your heart desires.","itemName":"Open heart vase","image":"7151867.jpg","tags":"vase, heart, flowers","category":"Home and Garden","stock":true},"48045":{"sellerID":"11751377","price":"20","description":"Never get tangled up again with this jewellery holder. Hang your necklaces, earrings, bracelets and more while checking your look~","itemName":"Jewellery holder","image":"4933390.jpg","tags":"mirror, jewellery, organizer","category":"Accessories","stock":true},"49280":{"sellerID":"11751377","price":"25","description":"Cute, sassy & hungry girl print. Perfect for jazzing up your pad. Or for that special babe in your life. Send noodles~ ","itemName":"Ramen babe print","image":"3633950.jpg","tags":"print, decoration, frame","category":"Home and Garden","stock":true},"50253":{"sellerID":"11751377","price":"35","description":"Everything you need to keep you up to date in life. This clock is so stylin', you don't even need it tell the time. Takes 2 AA batteries~","itemName":"80s abstract pattern clock","image":"8795198.jpg","tags":"80s, pattern, clock","category":"Home and Garden","stock":true},"54457":{"sellerID":"11751377","price":"30","description":"A mini ponderosa pine plant to spruce up your pad! Comes with a gold finished ceramic pot. Easy to care for and great as a gift!","itemName":"Potted ponderosa pine","image":"2452868.jpg","tags":"plant, potted, pine","category":"Home and Garden","stock":true},"59883":{"sellerID":"11751377","price":"30","description":"This is Totes YourTote. Jam out then cool off with this retro tote. Fits your laptop and other life items~","itemName":"Summer tote","image":"3636236.jpg","tags":"print, retro, bag","category":"Accessories","stock":true},"64010":{"sellerID":"11751377","price":"40","description":"Two-toned, glossy rubber plant that adds ambiance to any room! Very low maintenance & durable. Comes with a regal copper plated terracotta pot. ","itemName":"Potted rubber plant","image":"6632382.jpg","tags":"plant, potted, rubber","category":"Home and Garden","stock":true},"81606":{"sellerID":"11751377","price":"7","description":"Ceramic mug in millennial pink for today's babes. Get it for yourself or for your crush maybe? Dishwasher safe.","itemName":"Pink babe mug","image":"3590462.jpg","tags":"mug, kitchen, dishes","category":"Home and Garden","stock":true},"81961":{"sellerID":"68225185","price":"35","description":"Scented candle","itemName":"Candle","image":"3304024.jpeg","tags":"home, scents","category":"Home and Garden","stock":true},"82381":{"price":"40","description":"Blow your guests or your friend-who-showers-with-you away with this unique shower curtain~ Waterproof coating on both sides to keep it squeaky clean! ","itemName":"Turquoise shower curtain","image":"3319129.jpg","tags":"shower, curtain, bathroom","category":"Home and Garden","stock":true},"94964":{"sellerID":"11751377","price":"30","description":"Brighten up your pad and your mood with this cute potted spider baby plant. Comes with smiley painted terracotta pot. Happy living~","itemName":"Smiley spider baby plant","image":"7605721.jpg","tags":"plant, smiley, potted","category":"Home and Garden","stock":true},"96729":{"sellerID":"11751377","price":"25","description":"The world's most popular succulent in in a 4\" rough-finish natural terracotta cube pot. This little guy is happy indoors or outdoors~","itemName":"Echeveria succulent plant","image":"2169525.jpg","tags":"succulent, plant, potted","category":"Home and Garden","stock":true}}
+{
+  "6705": {
+    "sellerID": "68225185",
+    "price": "80",
+    "description": "Hip plant stand",
+    "itemName": "Plant Stand",
+    "image": "2019349.jpg",
+    "tags": "plant, green, home",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "15904": {
+    "sellerID": "11751377",
+    "price": "25",
+    "description":
+      "Please don't eat me! Or do? Try putting this little angel on your kitchen or bathroom walls! ",
+    "itemName": "Sushi babe print",
+    "image": "4194505.jpg",
+    "tags": "print, decoration, sushi",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "16191": {
+    "sellerID": "11751377",
+    "price": "45",
+    "description":
+      "Duo of boho cushions with cute tassles and pom poms. Adds personality to any boring couch you might have~",
+    "itemName": "Boho cushion duo",
+    "image": "9575990.jpg",
+    "tags": "cushion, boho, tassles",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "16968": {
+    "sellerID": "11751377",
+    "price": "25",
+    "description":
+      "Blue over you~ You wish. This belongs in your bedroom. Get it!",
+    "itemName": "Ultra violet babe print",
+    "image": "1902603.jpg",
+    "tags": "print, blue, decoration",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "23118": {
+    "sellerID": "11751377",
+    "price": "50",
+    "description":
+      "Splish, splash, splosh! Get ready to make waves in these shorts. Take 'em to the beach, to the pool party, or anywhere.",
+    "itemName": "Unisex summer shorts",
+    "image": "8434958.jpg",
+    "tags": "shorts, swimwear, unisex",
+    "category": "Fashion",
+    "stock": true
+  },
+  "44216": {
+    "sellerID": "11751377",
+    "price": "15",
+    "description":
+      "Show your love with this open heart vase. Molded from a patented plastic composite, this heart is unbreakable~ Looks great with any flowers your heart desires.",
+    "itemName": "Open heart vase",
+    "image": "7151867.jpg",
+    "tags": "vase, heart, flowers",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "48045": {
+    "sellerID": "11751377",
+    "price": "20",
+    "description":
+      "Never get tangled up again with this jewellery holder. Hang your necklaces, earrings, bracelets and more while checking your look~",
+    "itemName": "Jewellery holder",
+    "image": "4933390.jpg",
+    "tags": "mirror, jewellery, organizer",
+    "category": "Accessories",
+    "stock": true
+  },
+  "49280": {
+    "sellerID": "11751377",
+    "price": "25",
+    "description":
+      "Cute, sassy & hungry girl print. Perfect for jazzing up your pad. Or for that special babe in your life. Send noodles~ ",
+    "itemName": "Ramen babe print",
+    "image": "3633950.jpg",
+    "tags": "print, decoration, frame",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "50253": {
+    "sellerID": "11751377",
+    "price": "35",
+    "description":
+      "Everything you need to keep you up to date in life. This clock is so stylin', you don't even need it tell the time. Takes 2 AA batteries~",
+    "itemName": "80s abstract pattern clock",
+    "image": "8795198.jpg",
+    "tags": "80s, pattern, clock",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "54457": {
+    "sellerID": "11751377",
+    "price": "30",
+    "description":
+      "A mini ponderosa pine plant to spruce up your pad! Comes with a gold finished ceramic pot. Easy to care for and great as a gift!",
+    "itemName": "Potted ponderosa pine",
+    "image": "2452868.jpg",
+    "tags": "plant, potted, pine",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "59883": {
+    "sellerID": "11751377",
+    "price": "30",
+    "description":
+      "This is Totes YourTote. Jam out then cool off with this retro tote. Fits your laptop and other life items~",
+    "itemName": "Summer tote",
+    "image": "3636236.jpg",
+    "tags": "print, retro, bag",
+    "category": "Accessories",
+    "stock": true
+  },
+  "64010": {
+    "sellerID": "11751377",
+    "price": "40",
+    "description":
+      "Two-toned, glossy rubber plant that adds ambiance to any room! Very low maintenance & durable. Comes with a regal copper plated terracotta pot. ",
+    "itemName": "Potted rubber plant",
+    "image": "6632382.jpg",
+    "tags": "plant, potted, rubber",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "81606": {
+    "sellerID": "11751377",
+    "price": "7",
+    "description":
+      "Ceramic mug in millennial pink for today's babes. Get it for yourself or for your crush maybe? Dishwasher safe.",
+    "itemName": "Pink babe mug",
+    "image": "3590462.jpg",
+    "tags": "mug, kitchen, dishes",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "81961": {
+    "sellerID": "68225185",
+    "price": "35",
+    "description": "Scented candle",
+    "itemName": "Candle",
+    "image": "3304024.jpeg",
+    "tags": "home, scents",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "82381": {
+    "price": "40",
+    "description":
+      "Blow your guests or your friend-who-showers-with-you away with this unique shower curtain~ Waterproof coating on both sides to keep it squeaky clean! ",
+    "itemName": "Turquoise shower curtain",
+    "image": "3319129.jpg",
+    "tags": "shower, curtain, bathroom",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "94964": {
+    "sellerID": "11751377",
+    "price": "30",
+    "description":
+      "Brighten up your pad and your mood with this cute potted spider baby plant. Comes with smiley painted terracotta pot. Happy living~",
+    "itemName": "Smiley spider baby plant",
+    "image": "7605721.jpg",
+    "tags": "plant, smiley, potted",
+    "category": "Home and Garden",
+    "stock": true
+  },
+  "96729": {
+    "sellerID": "11751377",
+    "price": "25",
+    "description":
+      "The world's most popular succulent in in a 4\" rough-finish natural terracotta cube pot. This little guy is happy indoors or outdoors~",
+    "itemName": "Echeveria succulent plant",
+    "image": "2169525.jpg",
+    "tags": "succulent, plant, potted",
+    "category": "Home and Garden",
+    "stock": true
+  }
+}
