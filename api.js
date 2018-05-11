@@ -24,7 +24,6 @@ app.post('/login', (req, res) => {
     let userID = loginResponse.userID
     let email = loginResponse.email
     res.send(JSON.stringify({success: true, sessionID, firstName, userID, email}))
-    console.log("success!")
     }
 });
 
@@ -111,7 +110,6 @@ app.post('/removeFromCart', (req, res) => {
 })
 
 app.get('/getCart', (req, res) => {
-   // console.log(req.query)
     let userID = req.query.userID;
     res.send(JSON.stringify(alibay.getCart(userID)));
 })

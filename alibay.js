@@ -286,16 +286,12 @@ function deleteListing (itemID, userID) {
     let itemIDs = Object.keys(listings).filter(listing => {
        if (listings[listing].sellerID === userID && listing !=itemID) return true;
        return false
-    console.log(itemIDs)
 })
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
     return {success: true,itemIDs, userID}
 }
 
 function getCart (userID) {
-    //cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
-    //console.log(cartItems[userID])
-    //console.log(userID, cartItems)
     let itemIDs = cartItems[userID]
     return {success: true, itemIDs}
 }
