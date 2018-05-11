@@ -19,11 +19,7 @@ app.post('/login', (req, res) => {
         console.log("fail")
     } else {
     res.set('Set-Cookie', loginResponse.sessionID)
-    let sessionID = loginResponse.sessionID
-    let firstName = loginResponse.firstName
-    let userID = loginResponse.userID
-    let email = loginResponse.email
-    res.send(JSON.stringify({success: true, sessionID, firstName, userID, email}))
+    res.send(JSON.stringify(loginResponse))
     console.log("success!")
     }
 });
