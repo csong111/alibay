@@ -268,6 +268,29 @@ function removeFromCart (itemID, userID) {
     return {success: true, itemIDs}
 }
 
+
+function getUserItems(userID){
+    let itemIDs= Object.keys(listings).filter((listing) => {
+        if (listings[listing].sellerID === userID) return true 
+        return false
+    })   
+    if (itemIDs== undefined){
+        return {success:false, items:undefined}
+    }   
+    return {success: true, itemIDs} 
+}
+
+function deleteListing (itemID, userID) {
+    listings = JSON.parse(fs.readFileSync('./database/listings.json').toString())
+    let itemIDs = Object.keys(listings).filter(listing => {
+       if (listings[listing].sellerID === userID && listing !=itemID) return true;
+       return false
+    console.log(itemIDs)
+})
+    fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
+    return {success: true,itemIDs, userID}
+}
+
 function getCart (userID) {
     //cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
     //console.log(cartItems[userID])
@@ -299,6 +322,7 @@ module.exports = {
     addToCart,
     removeFromCart,
     getCart,
-    getUserItems
+    getUserItems,
+    deleteListing
     // Add all the other functions that need to be exported
 }
