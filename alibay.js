@@ -247,6 +247,9 @@ function addToCart (userID, itemID) {
 }
 
 function removeFromCart (itemID, userID) {
+    cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
+    console.log("itemID",itemID)
+    console.log("userID",userID)
     cartItems[userID] = cartItems[userID].filter(id => id !== itemID);
     let itemIDs = cartItems[userID];
     fs.writeFileSync('./database/cartItems.json', JSON.stringify(cartItems));
@@ -256,7 +259,7 @@ function removeFromCart (itemID, userID) {
 function getCart (userID) {
     //cartItems = JSON.parse(fs.readFileSync('./database/cartItems.json').toString())
     //console.log(cartItems[userID])
-    console.log(userID, cartItems)
+    //console.log(userID, cartItems)
     let itemIDs = cartItems[userID]
     return {success: true, itemIDs}
 }

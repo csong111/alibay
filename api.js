@@ -107,6 +107,7 @@ app.post('/removeFromCart', (req, res) => {
     let body = JSON.parse(req.body.toString());
     let userID = body.userID;
     let itemID = body.itemID;
+    res.send(JSON.stringify(alibay.removeFromCart(itemID, userID)))
 })
 
 app.get('/getCart', (req, res) => {
