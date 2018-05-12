@@ -271,29 +271,11 @@ function removeFromCart (itemID, userID) {
 
 
 function deleteListing (itemID, userID) {
-    // Filter listingDB to take out item id
-    console.log("ITEM ID",itemID)
-    //listingsDB = JSON.parse(fs.readFileSync('./database/listings.json').toString())
     delete listings[itemID]
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
-
     let answer = getUserItems(userID).itemIDs
     return {success: true, itemIDs : answer , userID}
 }
-
-// function deleteListing (itemID, userID) {
-//     listings = JSON.parse(fs.readFileSync('./database/listings.json').toString())
-//     listings = Object.keys(listings).filter(listing => listing !== itemID)
-//     let itemIDs = Object.keys(listings).filter(listing => {
-//        if (listings[listing].sellerID === userID) return true;
-//        return false
-// })
-//     console.log(itemIDs)
-//     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
-//     return {success: true,itemIDs, userID}
-// }
-
-
 function getCart (userID) {
     let itemIDs = cartItems[userID]
     console.log(itemIDs)
