@@ -1,12 +1,35 @@
 {
-  "6705": {
+  "8718": {
+    "sellerID": "72691106",
+    "price": "35",
+    "description":
+      "Comfort meets style with this A-line denim skirt that should be every girl's summer anthem. Looks extra cute with crew socks and sneakers!",
+    "itemName": "Denim skater skirt",
+    "image": "1836417.jpg",
+    "tags": "skirt, denim, blue",
+    "category": "Fashion",
+    "stock": true
+  },
+  "15664": {
     "sellerID": "68225185",
-    "price": "80",
-    "description": "Hip plant stand",
-    "itemName": "Plant Stand",
-    "image": "2019349.jpg",
-    "tags": "plant, green, home",
-    "category": "Home and Garden",
+    "price": "17",
+    "description":
+      "Keep that hair out of the way with these scrunchies. Soft on the head, soft on the eye. Get them before they're gone!",
+    "itemName": "Nautical scrunchies",
+    "image": "9752257.jpg",
+    "tags": "scrunchie, hair, elastic",
+    "category": "Accessories",
+    "stock": true
+  },
+  "15665": {
+    "sellerID": "68225185",
+    "price": "55",
+    "description":
+      "Be blue skies all day, every day with these vintage baby blue sunnies. Don't get eyeball cancer!",
+    "itemName": "Vintage blue tinted Ray-Bans",
+    "image": "2346521.jpg",
+    "tags": "sunglasses, shades, summer",
+    "category": "Accessories",
     "stock": true
   },
   "15904": {
@@ -21,7 +44,7 @@
     "stock": true
   },
   "16191": {
-    "sellerID": "11751377",
+    "sellerID": "68225185",
     "price": "45",
     "description":
       "Duo of boho cushions with cute tassles and pom poms. Adds personality to any boring couch you might have~",
@@ -53,8 +76,30 @@
     "category": "Fashion",
     "stock": true
   },
+  "33002": {
+    "sellerID": "68225185",
+    "price": "16",
+    "description":
+      "Make eyes linger on your ears with these beautiful gold plated colour-block earrings. Hypoallergenic material.",
+    "itemName": "Colour block earrings",
+    "image": "6565808.jpg",
+    "tags": "earrings, colourful, classy",
+    "category": "Accessories",
+    "stock": true
+  },
+  "35022": {
+    "sellerID": "72691106",
+    "price": "30",
+    "description":
+      "Sexy scarecrow? You got it. Cutest straw hat you've ever seen with soft little pom poms. Best paired with a sundress.",
+    "itemName": "Pom pommed straw hat",
+    "image": "788783.jpg",
+    "tags": "hat, pom pom, summer",
+    "category": "",
+    "stock": true
+  },
   "44216": {
-    "sellerID": "11751377",
+    "sellerID": "68225185",
     "price": "15",
     "description":
       "Show your love with this open heart vase. Molded from a patented plastic composite, this heart is unbreakable~ Looks great with any flowers your heart desires.",
@@ -65,7 +110,7 @@
     "stock": true
   },
   "48045": {
-    "sellerID": "11751377",
+    "sellerID": "68225185",
     "price": "20",
     "description":
       "Never get tangled up again with this jewellery holder. Hang your necklaces, earrings, bracelets and more while checking your look~",
@@ -86,6 +131,17 @@
     "category": "Home and Garden",
     "stock": true
   },
+  "49512": {
+    "sellerID": "72691106",
+    "price": "45",
+    "description":
+      "Turn heads this summer with this splash of cool tropical motif. Breathable material to keep you sweat-free all day. Machine wash safe!",
+    "itemName": "Blue Hawaii shirt",
+    "image": "2531403.jpg",
+    "tags": "hawaii, shirt, tropical",
+    "category": "Fashion",
+    "stock": true
+  },
   "50253": {
     "sellerID": "11751377",
     "price": "35",
@@ -98,7 +154,7 @@
     "stock": true
   },
   "54457": {
-    "sellerID": "11751377",
+    "sellerID": "72691106",
     "price": "30",
     "description":
       "A mini ponderosa pine plant to spruce up your pad! Comes with a gold finished ceramic pot. Easy to care for and great as a gift!",
@@ -108,8 +164,19 @@
     "category": "Home and Garden",
     "stock": true
   },
-  "59883": {
+  "58225": {
     "sellerID": "11751377",
+    "price": "30",
+    "description":
+      "Look as delicious as a Creamsicle in this stylish crop top. Best paired with denim shorts or denim skater skirts! 100% cotton.",
+    "itemName": "Creamsicle crop top",
+    "image": "3522197.jpg",
+    "tags": "orange, crop top, shirt",
+    "category": "Fashion",
+    "stock": true
+  },
+  "59883": {
+    "sellerID": "72691106",
     "price": "30",
     "description":
       "This is Totes YourTote. Jam out then cool off with this retro tote. Fits your laptop and other life items~",
@@ -120,7 +187,7 @@
     "stock": true
   },
   "64010": {
-    "sellerID": "11751377",
+    "sellerID": "72691106",
     "price": "40",
     "description":
       "Two-toned, glossy rubber plant that adds ambiance to any room! Very low maintenance & durable. Comes with a regal copper plated terracotta pot. ",
@@ -130,24 +197,25 @@
     "category": "Home and Garden",
     "stock": true
   },
+  "67722": {
+    "sellerID": "72691106",
+    "price": "45",
+    "description":
+      "Don't just drink pinot noir, wear it! 300% silk. Hand wash only.",
+    "itemName": "Red velvet spaghetti strap top",
+    "image": "8298183.jpg",
+    "tags": "crop top, red, shirt",
+    "category": "Fashion",
+    "stock": true
+  },
   "81606": {
-    "sellerID": "11751377",
+    "sellerID": "72691106",
     "price": "7",
     "description":
       "Ceramic mug in millennial pink for today's babes. Get it for yourself or for your crush maybe? Dishwasher safe.",
     "itemName": "Pink babe mug",
     "image": "3590462.jpg",
     "tags": "mug, kitchen, dishes",
-    "category": "Home and Garden",
-    "stock": true
-  },
-  "81961": {
-    "sellerID": "68225185",
-    "price": "35",
-    "description": "Scented candle",
-    "itemName": "Candle",
-    "image": "3304024.jpeg",
-    "tags": "home, scents",
     "category": "Home and Garden",
     "stock": true
   },
@@ -173,10 +241,10 @@
     "stock": true
   },
   "96729": {
-    "sellerID": "11751377",
+    "sellerID": "72691106",
     "price": "25",
     "description":
-      "The world's most popular succulent in in a 4\" rough-finish natural terracotta cube pot. This little guy is happy indoors or outdoors~",
+      "The world's most popular succulent in a 4\" rough-finish natural terracotta cube pot. This little guy is happy indoors or outdoors~",
     "itemName": "Echeveria succulent plant",
     "image": "2169525.jpg",
     "tags": "succulent, plant, potted",

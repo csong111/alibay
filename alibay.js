@@ -207,7 +207,7 @@ The seller will see the listing in his history of items sold
 function buy (buyerID, sellerID, listingID) {
     putItemsBought(buyerID, listingID);
     putItemsSold(sellerID, listingID);
-    //listings[listingID] = listings[listingID].filter(id => id !== listingID);
+    delete listings[listingID];
     let items = listings[listingID];
     items.stock = false;
     fs.writeFileSync('./database/listings.json', JSON.stringify(listings));
@@ -299,10 +299,6 @@ function getCart (userID) {
     console.log(itemIDs)
     return {success: true, itemIDs}
 }
-
-
-
-
 
 module.exports = {
     signUp,
